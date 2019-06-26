@@ -23,7 +23,7 @@ public class SwingPaint {
     JButton greenBtn = new JButton("Green");
     JButton redBtn = new JButton("Red");
     JButton magentaBtn = new JButton("Magenta");
-    DrawArea drawArea =new DrawArea();
+    DrawArea drawArea;
     ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -53,9 +53,8 @@ public class SwingPaint {
         //set layout on ccontent pane
         content.setLayout(new BorderLayout());
         //create draw area
-        final DrawArea drawArea = new DrawArea();
-        //add to content pane
-        content.add(drawArea, BorderLayout.CENTER);
+        drawArea=new DrawArea();
+        
         //create controls to apply and call clear feature
         JPanel controls = new JPanel();
 
@@ -81,6 +80,9 @@ public class SwingPaint {
 
         //add to content pane
         content.add(controls, BorderLayout.NORTH);
+        
+        //add to content pane
+        content.add(drawArea, BorderLayout.CENTER);
 
         frame.setSize(600, 600);
         //can close frame
